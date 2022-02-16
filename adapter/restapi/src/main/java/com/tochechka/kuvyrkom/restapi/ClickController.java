@@ -2,27 +2,34 @@ package com.tochechka.kuvyrkom.restapi;
 
 import com.tochechka.kuvyrkom.core.BusinessLogic;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
-@RestController
+@Controller
 @RequestMapping("/counter")
 @AllArgsConstructor
 public class ClickController {
 
     private BusinessLogic businessLogic;
 
-    @GetMapping(value = "/click", produces = APPLICATION_JSON_VALUE)
-    public Long countClick(@RequestParam(value = "id", required = false) Long id) {
-        return businessLogic.countClick(id);
+    @GetMapping
+    public String counter(@RequestParam(value = "id", defaultValue = "1") Long id, Model model) {
+        model.addAttribute("count", businessLogic.showCount(id));
+        return "counter";
     }
 
-    @GetMapping(value = "/show", produces = APPLICATION_JSON_VALUE)
-    public Long showCount(@RequestParam(value = "id", required = false) Long id) {
-        return businessLogic.showCount(id);
+    @GetMapping(value = "/click")
+    public String countClick(@RequestParam(value = "id", defaultValue = "1") Long id, Model model) {
+        model.addAttribute("count", businessLogic.countClick(id));
+        return "redirect:/counter";
+    }
+
+    @GetMapping(value = "/startover")
+    public String startOver(@RequestParam(value = "id", defaultValue = "1") Long id, Model model) {
+        model.addAttribute("count", businessLogic.startOver(id));
+        return "redirect:/counter";
     }
 }
