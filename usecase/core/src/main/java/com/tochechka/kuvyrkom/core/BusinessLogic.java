@@ -23,4 +23,10 @@ public class BusinessLogic {
     public Long showCount(Long id) {
         return clickService.findById(id).getCount();
     }
+
+    public Long startOver(Long id) {
+        Click click = clickService.findById(id);
+        click.setCount(0L);
+        return clickService.save(click).getCount();
+    }
 }
