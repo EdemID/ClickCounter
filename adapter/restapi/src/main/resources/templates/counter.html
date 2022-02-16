@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Счетчик кликов</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" th:href="@{/css/counter.css}"
+          href="/static/css/counter.css" />
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Счетчик кликов</h1>
+        <h2>
+            <span th:text="'Количество кликов: ' + ${count}"></span>
+        </h2>
+    </div>
+
+    <style type="text/css">
+        button[name="count_click"] {
+            border: none;
+            border-radius: 7px;
+            padding: 10px 25px;
+            background: dodgerblue;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        button[name="count_click"]:hover {
+            background: #ff6600;
+        }
+    </style>
+    <form th:action="@{/counter/click?id={id}(id=1)}">
+        <button th:type="submit" name="count_click">Клик</button>
+    </form>
+
+    <tr>
+        <a th:href="@{/counter/startover}" class="btn btn-danger">Начать сначала!</a>
+    </tr>
+</div>
+
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
