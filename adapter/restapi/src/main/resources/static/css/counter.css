@@ -1,0 +1,15 @@
+div {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+h1, h2 {
+    border: 2px solid indigo;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    background-color: #99ff99;
+}

@@ -11,7 +11,7 @@ public class BusinessLogic {
 
     private ClickServiceImpl clickService;
 
-    public Long countClick(Long id) {
+    public Long incrementClick(Long id) {
         Click click = clickService.findById(id);
         Long count = click.getCount();
         Long currentCount = ++count;
@@ -22,5 +22,11 @@ public class BusinessLogic {
 
     public Long showCount(Long id) {
         return clickService.findById(id).getCount();
+    }
+
+    public Long startOver(Long id) {
+        Click click = clickService.findById(id);
+        click.setCount(0L);
+        return clickService.save(click).getCount();
     }
 }
