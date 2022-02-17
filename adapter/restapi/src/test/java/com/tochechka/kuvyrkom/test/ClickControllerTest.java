@@ -1,13 +1,23 @@
 package com.tochechka.kuvyrkom.test;
 
+import com.tochechka.kuvyrkom.core.BusinessLogic;
+import com.tochechka.kuvyrkom.restapi.ClickController;
 import org.junit.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ContextConfiguration;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-public class ClickControllerTestForController extends BaseTestForController {
+@ContextConfiguration(classes = {ClickController.class})
+@WebMvcTest({ClickController.class})
+public class ClickControllerTest extends BaseTestForController {
+
+    @MockBean
+    private BusinessLogic businessLogic;
 
     @Test
     public void counter() throws Exception {
