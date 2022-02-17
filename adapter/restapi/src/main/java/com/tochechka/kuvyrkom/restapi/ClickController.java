@@ -22,8 +22,8 @@ public class ClickController {
     }
 
     @GetMapping(value = "/click")
-    public String countClick(@RequestParam(value = "id", defaultValue = "1") Long id, Model model) {
-        model.addAttribute("count", businessLogic.countClick(id));
+    public String incrementClick(@RequestParam(value = "id", defaultValue = "1") Long id, Model model) {
+        model.addAttribute("count", businessLogic.incrementClick(id));
         return "redirect:/counter";
     }
 
