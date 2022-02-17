@@ -41,7 +41,7 @@ public class BusinessLogicTest {
 
         long finiteNumber = 10;
         while (initialNumber < finiteNumber) {
-            businessLogic.countClick(1L);
+            businessLogic.incrementClick(1L);
             initialNumber++;
         }
 
