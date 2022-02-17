@@ -22,4 +22,9 @@ public class ClickServiceImpl {
     public Click save(Click click) {
         return clickRepository.save(click);
     }
+
+    public Click incrementClickByNativeQuery(Long id) {
+        clickRepository.incrementClickByNativeQuery(id);
+        return clickRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Клик с id=" + id + " не найден!"));
+    }
 }

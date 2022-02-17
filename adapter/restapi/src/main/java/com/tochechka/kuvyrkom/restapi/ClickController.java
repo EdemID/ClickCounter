@@ -32,4 +32,10 @@ public class ClickController {
         model.addAttribute("count", businessLogic.startOver(id));
         return "redirect:/counter";
     }
+
+    @GetMapping(value = "/incrementClickByNativeQuery")
+    public String incrementClickByNativeQuery(@RequestParam(value = "id", defaultValue = "1") Long id, Model model) {
+        model.addAttribute("count", businessLogic.incrementClickByNativeQuery(id));
+        return "redirect:/counter";
+    }
 }

@@ -29,4 +29,8 @@ public class BusinessLogic {
         click.setCount(0L);
         return clickService.save(click).getCount();
     }
+
+    public Long incrementClickByNativeQuery(Long id) {
+        return clickService.incrementClickByNativeQuery(id).getCount();
+    }
 }
