@@ -38,4 +38,10 @@ public class ClickController {
         model.addAttribute("count", businessLogic.incrementClickByTwoWithNativeQuery(id));
         return "redirect:/counter";
     }
+
+    @GetMapping(value = "/incrementClickByThreeWithJdbcTemplate")
+    public String incrementClickByThreeWithJdbcTemplate() {
+        businessLogic.incrementClickByThreeWithJdbcTemplate();
+        return "redirect:/counter";
+    }
 }

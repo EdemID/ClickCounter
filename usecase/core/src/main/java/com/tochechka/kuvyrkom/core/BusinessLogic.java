@@ -2,6 +2,7 @@ package com.tochechka.kuvyrkom.core;
 
 import com.tochechka.kuvyrkom.model.Click;
 import com.tochechka.kuvyrkom.persistence.service.ClickServiceImpl;
+import com.tochechka.kuvyrkom.persistence.service.ServiceJdbc;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class BusinessLogic {
 
     private ClickServiceImpl clickService;
+    private ServiceJdbc serviceJdbc;
 
     public Long incrementClick(Long id) {
         Click click = clickService.findById(id);
@@ -32,5 +34,9 @@ public class BusinessLogic {
 
     public Long incrementClickByTwoWithNativeQuery(Long id) {
         return clickService.incrementClickByTwoWithNativeQuery(id).getCount();
+    }
+
+    public void incrementClickByThreeWithJdbcTemplate() {
+        serviceJdbc.incrementClickByThreeWithJdbcTemplate();
     }
 }

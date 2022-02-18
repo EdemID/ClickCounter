@@ -40,17 +40,23 @@
         }
     </style>
     <form th:action="@{/counter/click?id={id}(id=1)}">
-        <button th:type="submit" name="count_click">Клик</button>
+        <button th:type="submit" name="count_click">Клик как сущность. +1</button>
     </form>
 
     <tr>
         <a th:href="@{/counter/startover}" class="btn btn-danger">Начать сначала!</a>
     </tr>
-<p>
+    <p>
 
-</p>
+    </p>
     <tr>
-        <a th:href="@{/counter/incrementClickByTwoWithNativeQuery}" class="btn btn-outline-success">Один клик за два</a>
+        <a th:href="@{/counter/incrementClickByTwoWithNativeQuery}" class="btn btn-outline-success">Клик как сущность с использованием Native query. +2</a>
+    </tr>
+    <p>
+
+    </p>
+    <tr>
+        <a th:href="@{/counter/incrementClickByThreeWithJdbcTemplate}" class="btn btn-outline-primary">Клик без сущности с использованием Jdbc Template. +3</a>
     </tr>
 </div>
 
