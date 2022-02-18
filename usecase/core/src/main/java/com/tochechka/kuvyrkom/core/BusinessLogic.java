@@ -30,7 +30,7 @@ public class BusinessLogic {
         return clickService.save(click).getCount();
     }
 
-    public Long incrementClickByNativeQuery(Long id) {
-        return clickService.incrementClickByNativeQuery(id).getCount();
+    public Long incrementClickByTwoWithNativeQuery(Long id) {
+        return clickService.incrementClickByTwoWithNativeQuery(id).getCount();
     }
 }
