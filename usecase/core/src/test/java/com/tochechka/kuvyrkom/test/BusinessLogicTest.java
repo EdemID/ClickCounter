@@ -4,6 +4,7 @@ import com.tochechka.kuvyrkom.core.BusinessLogic;
 import com.tochechka.kuvyrkom.model.Click;
 import com.tochechka.kuvyrkom.persistence.repository.ClickRepository;
 import com.tochechka.kuvyrkom.persistence.service.ClickServiceImpl;
+import com.tochechka.kuvyrkom.persistence.service.ServiceJdbc;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
@@ -27,6 +28,9 @@ public class BusinessLogicTest {
 
     @MockBean
     private ClickServiceImpl clickService;
+
+    @MockBean
+    private ServiceJdbc serviceJdbc;
 
     @MockBean
     private ClickRepository clickRepository;
