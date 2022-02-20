@@ -7,6 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Controller
 @RequestMapping("/counter")
@@ -43,5 +46,11 @@ public class ClickController {
     public String incrementClickByThreeWithJdbcTemplate() {
         businessLogic.incrementClickByThreeWithJdbcTemplate();
         return "redirect:/counter";
+    }
+
+    @ResponseBody
+    @GetMapping(value = "/incrementClickAndReturnJsonResponse", produces = APPLICATION_JSON_VALUE)
+    public Long incrementClickAndReturnJsonResponse(@RequestParam(value = "id", defaultValue = "1") Long id) {
+        return businessLogic.incrementClick(id);
     }
 }
