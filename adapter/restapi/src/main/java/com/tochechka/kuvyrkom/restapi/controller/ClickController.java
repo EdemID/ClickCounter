@@ -1,4 +1,4 @@
-package com.tochechka.kuvyrkom.restapi;
+package com.tochechka.kuvyrkom.restapi.controller;
 
 import com.tochechka.kuvyrkom.core.BusinessLogic;
 import lombok.AllArgsConstructor;

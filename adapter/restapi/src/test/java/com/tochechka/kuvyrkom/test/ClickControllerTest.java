@@ -1,7 +1,7 @@
 package com.tochechka.kuvyrkom.test;
 
 import com.tochechka.kuvyrkom.core.BusinessLogic;
-import com.tochechka.kuvyrkom.restapi.ClickController;
+import com.tochechka.kuvyrkom.restapi.controller.ClickController;
 import org.junit.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;

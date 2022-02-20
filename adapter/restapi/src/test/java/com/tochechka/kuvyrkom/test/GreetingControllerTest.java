@@ -1,6 +1,6 @@
 package com.tochechka.kuvyrkom.test;
 
-import com.tochechka.kuvyrkom.restapi.GreetingController;
+import com.tochechka.kuvyrkom.restapi.controller.GreetingController;
 import org.junit.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.ContextConfiguration;

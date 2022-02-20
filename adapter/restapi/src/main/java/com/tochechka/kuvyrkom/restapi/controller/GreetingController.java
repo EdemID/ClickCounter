@@ -1,4 +1,4 @@
-package com.tochechka.kuvyrkom.restapi;
+package com.tochechka.kuvyrkom.restapi.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
